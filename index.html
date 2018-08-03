@@ -1,9 +1,19 @@
 <div id="todo">
-	<input type="text" name="new_task" v-bind:value="new_task" v-model="new_task">
+	<input type="text" name="new_task" v-bind:value="new_task" v-model="new_task" v-on:keyup.13="addTask">
 	<h2>{{ new_task }}</h2>
 	<button name="submit" v-on:click="addTask">Add Task</button>
 
-	<h3>List of task: {{ task_list }}</h3>
+	<h3>List of task: 
+		 <ul v-for="(task, index) in task_list"><li v-on:click="removeTask(index)">{{ task.text }}</li></ul>
+	</h3>
+
+	</br></br>
+
+	<h3>List of completed task:</h3>
+
+	<ul v-for="task in completed_list">
+		<li>{{ task.text }}</li>
+	</ul>
 </div>
 
 <script src="./script/vue.min.js"></script>
