@@ -1,0 +1,11 @@
+<div id="todo">
+	<input type="text" name="new_task" v-bind:value="new_task" v-model="new_task">
+	<h2>{{ new_task }}</h2>
+	<button name="submit" v-on:click="addTask">Add Task</button>
+
+	<h3>List of task: {{ task_list }}</h3>
+</div>
+
+<script src="./script/vue.min.js"></script>
+
+<script src="./script/app.js"></script>
